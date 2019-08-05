@@ -1,4 +1,5 @@
 package model;
 
-public class ToolType {
+public enum ToolType {
+    HAMMER, SCREWDRIVER, SAW, OTHER
 }

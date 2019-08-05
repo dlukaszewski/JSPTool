@@ -1,4 +1,17 @@
 package service;
 
-public class ToolServiceImpl {
+import dao.ToolDao;
+import dao.ToolDaoImpl;
+import model.Tool;
+
+import java.util.List;
+
+public class ToolServiceImpl implements ToolService {
+
+    private final ToolDao toolDao = new ToolDaoImpl();
+
+    @Override
+    public List<Tool> getAllTools() {
+        return toolDao.getAll();
+    }
 }
