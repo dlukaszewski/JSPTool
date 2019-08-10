@@ -5,6 +5,15 @@ public class Tool {
     private String name;
     private ToolType type;
     private boolean available;
+    private boolean take_return;
+
+    public boolean isTake_return() {
+        return take_return;
+    }
+
+    public void setTake_return(boolean take_return) {
+        this.take_return = take_return;
+    }
 
     public Tool() {
     }

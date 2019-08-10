@@ -12,9 +12,16 @@
     <title>Tool</title>
 </head>
 
+
 <style>
     table, th, td {
         border: 1px solid black;
+    }
+    .red {
+        background-color: red;
+    }
+    .green {
+        background-color: green;
     }
 </style>
 
@@ -26,13 +33,21 @@
         <th>Name</th>
         <th>Type</th>
         <th>Available</th>
+        <th>Change State</th>
     </tr>
     <c:forEach items="${requestScope.tools}" var="tool">
         <tr>
             <td>${tool.id}</td>
             <td>${tool.name}</td>
             <td>${tool.type}</td>
-            <td>${tool.available}</td>
+            <td class = "${tool.available ? 'green' : 'red'}"></td>
+            <td>
+                <form method="post">
+                    <input type="hidden" value="${tool.id}" name="id">
+                    <input type="hidden" value="${tool.available ? 'Take' : 'Return'}" name="action">
+                    <input type="submit" value="${tool.available ? 'Take' : 'Return'}">
+                </form>
+            </td>
         </tr>
     </c:forEach>
 
